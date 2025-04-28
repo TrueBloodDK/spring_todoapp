@@ -21,7 +21,12 @@
         <button class="btn btn-danger" type="submit">Удалить всё</button>
     </form>
 
-
+    <form th:action="@{/search}" method="post" class="mb-3">
+        <div class="input-group">
+            <input type="text" class="form-control" name="searchTerm" placeholder="Найти задачи" th:value="${searchTerm}">
+            <button class="btn btn-outline-secondary" type="submit">Найти</button>
+        </div>
+    </form>
 
     <ul class="list-group">
         <li th:each="item : ${AllTodos}">
