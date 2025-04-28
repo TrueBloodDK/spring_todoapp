@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 @Controller
 public class TodoController {
 
@@ -17,11 +19,13 @@ public class TodoController {
 
     @GetMapping
     public String index(Model model){
-        model.addAttribute(
-                "data",
-                "Bebra"
-        );
-        TodoItem todoItem = new TodoItem();
+        todoItemRepository.save(new TodoItem("Bebra1"));
+        todoItemRepository.save(new TodoItem("Bebra2"));
+
+        List<TodoItem> allTodos = todoItemRepository.findAll();
+
+        model.addAttribute("AllTodos", allTodos);
+
         return "index";
     }
 }

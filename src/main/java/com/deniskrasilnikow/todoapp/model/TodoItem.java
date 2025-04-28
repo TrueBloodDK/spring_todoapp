@@ -16,5 +16,13 @@ public class TodoItem {
     private Long id;
 
     private String title;
+
+
+    public TodoItem(){
+    }
+
+    public TodoItem(String title){
+        this.title = title;
+    }
 }
 
