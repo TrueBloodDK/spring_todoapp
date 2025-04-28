@@ -1,5 +1,6 @@
 package com.deniskrasilnikow.todoapp;
 
+import com.deniskrasilnikow.todoapp.model.TodoItem;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +11,7 @@ public class TodoApplication {
 		SpringApplication.run(TodoApplication.class, args);
 	}
 
+	TodoItem todoItem = new TodoItem();
 	//this is test commit
 }
 
